@@ -38,6 +38,20 @@ testfixtures = ">=7.1.0"
 typing-extensions = ">=3.6.2"
 
 [[package]]
+name = "asgiref"
+version = "3.8.1"
+description = "ASGI specs, helper code, and adapters"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+typing-extensions = {version = ">=4", markers = "python_version < \"3.11\""}
+
+[package.extras]
+tests = ["pytest", "pytest-asyncio", "mypy (>=0.800)"]
+
+[[package]]
 name = "beautifulsoup4"
 version = "4.12.3"
 description = "Screen-scraping library"
@@ -89,6 +103,23 @@ python-versions = ">=3.8"
 
 [package.extras]
 toml = ["tomli"]
+
+[[package]]
+name = "django"
+version = "3.0"
+description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+asgiref = ">=3.2,<4.0"
+pytz = "*"
+sqlparse = ">=0.2.2"
+
+[package.extras]
+argon2 = ["argon2-cffi (>=16.1.0)"]
+bcrypt = ["bcrypt"]
 
 [[package]]
 name = "empty-files"
@@ -219,6 +250,14 @@ approvaltests = "*"
 pytest = ">=7.0.1"
 
 [[package]]
+name = "pytz"
+version = "2024.1"
+description = "World timezone definitions, modern and historical"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pyyaml"
 version = "6.0.1"
 description = "YAML parser and emitter for Python"
@@ -251,6 +290,18 @@ description = "A modern CSS selector implementation for Beautiful Soup."
 category = "main"
 optional = false
 python-versions = ">=3.8"
+
+[[package]]
+name = "sqlparse"
+version = "0.5.0"
+description = "A non-validating SQL parser."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+dev = ["build", "hatch"]
+doc = ["sphinx"]
 
 [[package]]
 name = "testfixtures"
@@ -298,17 +349,19 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "662e28d43c77e9c6fa4bf452eb37cdd43789316df3d839c0a5fd9fb1dbc65b6e"
+content-hash = "dda688b700578fe2169db0cf297fd5ff174403e67958a4252124438ebfd82502"
 
 [metadata.files]
 allpairspy = []
 approval-utilities = []
 approvaltests = []
+asgiref = []
 beautifulsoup4 = []
 certifi = []
 charset-normalizer = []
 colorama = []
 coverage = []
+django = []
 empty-files = []
 exceptiongroup = []
 idna = []
@@ -320,9 +373,11 @@ pluggy = []
 pyperclip = []
 pytest = []
 pytest-approvaltests = []
+pytz = []
 pyyaml = []
 requests = []
 soupsieve = []
+sqlparse = []
 testfixtures = []
 tomli = []
 typing-extensions = []
