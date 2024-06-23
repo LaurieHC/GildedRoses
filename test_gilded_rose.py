@@ -35,10 +35,10 @@ class GildedRoseTest(unittest.TestCase):
         self.assertEqual(4, updated_items[0].quality) 
 
     def test_sulfuras_doesnt_degrade(self):
-        items = [Item("Sulfuras, Hand of Ragnaros", 0, 50)]
+        items = [Item("Sulfuras, Hand of Ragnaros", 0, 80)]
         updated_items = update_items_on_range(10, items)
             
-        self.assertEqual(50, updated_items[0].quality) 
+        self.assertEqual(80, updated_items[0].quality) 
 
     def test_backstage_passes_increase_in_quality_10_days_or_less(self):
         items = [Item("Backstage passes to a TAFKAL80ETC concert", 15, 20)]
