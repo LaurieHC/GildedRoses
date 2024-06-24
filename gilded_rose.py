@@ -2,7 +2,7 @@
 
 class ItemAger(object):
 
-    def base_item(item):
+    def standard_item(item):
         if item.sell_in > 0:
             item.quality = max((item.quality - 1), 0)
         else:
@@ -54,11 +54,15 @@ class GildedRose(object):
             elif item.name == "Backstage passes to a TAFKAL80ETC concert":
                 ItemAger.backstage_passes(item)
             elif item.name == "Sulfuras, Hand of Ragnaros":
+                """
+                unlike other items which are specific for what they are Sulfuras is specific in the specifications due
+                to being a legendary item and so uses a legendary item method.
+                """
                 ItemAger.legendary_item(item)
             elif item.name == "Conjured Mana Cake":
                 ItemAger.conjured_item(item)
             else:
-                ItemAger.base_item(item)
+                ItemAger.standard_item(item)
 
 class Item:
     def __init__(self, name, sell_in, quality):
